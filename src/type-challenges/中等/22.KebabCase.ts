@@ -1,6 +1,5 @@
 
 // FooBarBaz -> foo-bar-baz
-
 type isCapitalize<C extends string> = C extends Uppercase<C> ? true : false
 
 type KebabCase<S extends string, TS extends string = ''>

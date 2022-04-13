@@ -1,10 +1,13 @@
-type UnionByArr<T extends Array<any>> = T extends [infer F, ...infer R] ? F | UnionByArr<R> : never;
+import { IsEqual } from '../utils/IsEqual'
 
-type Includes<T extends Array<any>, E> = E extends UnionByArr<T> ? true : false
+{
+  type Includes<T extends readonly any[], U> = T extends [infer First, ...infer Rest]
+    ? IsEqual<First, U> extends true
+      ? true
+      : Includes<Rest, U>
+    : false
 
-type U = UnionByArr<[2, 2, 3, 1]> // 2 | 3 | 1
-type U2 = [2, 2, 3, 1][number] // 2 | 3 | 1
-
-type I0 = Includes<[], 1>; // false
-type I1 = Includes<[2, 2, 3, 1], 2>; // true
-type I2 = Includes<[2, 3, 3, 1], 1>; // true
+  type I0 = Includes<[], 1>; // false
+  type I1 = Includes<[2, 2, 3, 1], 2>; // true
+  type I2 = Includes<[2, 3, 3, 1], 1>; // true
+}

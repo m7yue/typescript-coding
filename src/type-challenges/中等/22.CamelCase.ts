@@ -9,8 +9,6 @@ type CamelCase<T extends string, isFirst = true>
     ? isFirst extends true
       ? `${F}${CamelCase<Rest, false>}`
       : `${UppercaseFirst<F>}${CamelCase<Rest>}`
-    : T extends ""
-      ? ''
-      : UppercaseFirst<T>
+    : UppercaseFirst<T>
 
 type Test = CamelCase<'for-bar-baz'>

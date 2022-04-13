@@ -1,0 +1,1 @@
+export type PromiseType<T> = T extends Promise<infer PT> ? PT: T

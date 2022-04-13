@@ -4,7 +4,7 @@
   type GenCombinations<T extends string, K extends string = T>
     = [T] extends [never] // 退出条件很关键
       ? ''
-      : T extends T // 起到了遍历的效果
+      : T extends T
         ? `${T}${GenCombinations<Exclude<K, T>>}` | GenCombinations<Exclude<K, T>>
         : never
 
