@@ -13,3 +13,12 @@ type Curry<
 type F0 = Curry<() => Date>; // () => Date
 type F1 = Curry<(a: number) => Date>; // (arg: number) => Date
 type F2 = Curry<(a: number, b: string) => Date>; //  (arg_0: number) => (b: string) => Date
+
+declare function Currying<F extends (...args: any[]) => any>(
+  fn: F
+): Curry<F>;
+
+const add = (a: number, b: number) => a + b
+const three = add(1, 2)
+const curriedAdd = Currying(add)
+const five = curriedAdd(2)(3)
