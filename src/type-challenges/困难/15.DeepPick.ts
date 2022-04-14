@@ -10,13 +10,14 @@
         }
         : never
 
-  type UnionToIntersection<T>
-    = (T extends any ? (x: T) => any : never) extends (x: infer U) => any ? U : never
-  
   type UnionPick<T, K extends string>
     =  K extends K
       ? GetData<T, K>
       : never
+
+  type UnionToIntersection<T>
+    = (T extends any ? (x: T) => any : never) extends (x: infer U) => any ? U : never
+
     
   type DeepPick<T, K extends string> = UnionToIntersection<UnionPick<T, K>>
   

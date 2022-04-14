@@ -4,11 +4,11 @@ type Curry<
   F extends (...args: any[]) => any,
   P extends any[] = Parameters<F>,
   R = ReturnType<F>,
-> = P extends [infer A, ...infer B]
-  ? B extends []
-    ? (arg: A) => R
-    : (arg: A) => Curry<(...args: B) => R>
-  : F;
+> = P['length'] extends 1
+    ? (arg: P[0]) => R
+    : P extends [infer A, ...infer B]
+      ? (arg: A) => Curry<(...args: B) => R>
+      : never
 
 type F0 = Curry<() => Date>; // () => Date
 type F1 = Curry<(a: number) => Date>; // (arg: number) => Date
