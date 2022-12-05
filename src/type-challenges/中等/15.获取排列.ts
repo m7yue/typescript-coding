@@ -1,4 +1,5 @@
 {
+  // @Q [T] extends [never]
   type Permutation<T, K = T> = [T] extends [never]
     ? []
     : T extends T // 起到了遍历的效果

@@ -1,6 +1,7 @@
 {
+  // @Q 字符串匹配
   type TrimLeft<S extends string>
-    = S extends `${" " | "\n" | "\t"}${infer Rest}`
+    = S extends `${' ' | '\n' | '\t'}${infer Rest}`
       ? TrimLeft<Rest>
       : S
 

@@ -1,4 +1,7 @@
 {
+  /**
+   * @Q 本体实现是根据题目具体方要求实现的，实际运用时需要根据具体场景
+   */
   type ReplaceKeys<T, U, O>
     = T extends T
       ? {
@@ -6,6 +9,9 @@
       }
       : never
 
+      type A = {
+        a: number
+      }
 
   type NodeA = {
     type: 'A'

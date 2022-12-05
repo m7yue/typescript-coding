@@ -1,10 +1,16 @@
 {
+  /**
+   * @Q
+   * PropertyKey
+   */
   type TupleToNestedObject<T extends any[], U>
     = T extends [infer F, ...infer Rest]
         ? {
-          [P in Extract<T[number], F>]: TupleToNestedObject<Rest, U>
+          [P in F as F extends PropertyKey ? F : never]: TupleToNestedObject<Rest, U>
         }
         : U
+  
+  type P = PropertyKey
 
   type a = TupleToNestedObject<['a'], string> // {a: string}
   type b = TupleToNestedObject<['a', 'b'], number> // {a: {b: number}}

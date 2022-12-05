@@ -3,4 +3,4 @@
  * 请你实现一个类型，可以获取这个类型。
  */
 
-type MyAwaited1<T> = T extends Promise<infer Res> ? MyAwaited1<Res> : T
+type MyAwaited1<T> = T extends Promise<infer Res> ? MyAwaited1<Res> : T // 递归获取最终的值

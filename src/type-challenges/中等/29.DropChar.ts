@@ -1,8 +1,9 @@
 {
   type DropChar<S, C> = S extends `${infer L}${infer R}`
-  ? `${L extends C ? "" : L}${DropChar<R, C>}`
-  : S;
+    ? `${L extends C ? '' : L}${DropChar<R, C>}`
+    : S;
 
+  // @Q
   type DropChar1<S, C extends string>
     = S extends `${infer L}${C}${infer R}`
       ? `${L}${DropChar1<R, C>}`

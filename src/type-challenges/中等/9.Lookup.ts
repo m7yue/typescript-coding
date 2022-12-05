@@ -18,5 +18,7 @@
     color: 'brown' | 'white' | 'black'
   }
 
-  type MyDog = LookUp<Cat | Dog, 'dog'> // expected to be `Dog`
+  type MyDog = LookUp<Cat | Dog, 'Bengal'> // expected to be `Dog`
+
+  // @Q, 检索内容
 }

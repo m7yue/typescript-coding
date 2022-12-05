@@ -1,4 +1,8 @@
 {
+  /**
+   * @Q
+   * [P in T as XXX]
+   */
   type Flip<T extends Record<string, any>> = {
     [P in keyof T as `${T[P]}`]: P
   }

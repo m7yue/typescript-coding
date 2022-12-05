@@ -1,4 +1,7 @@
 {
+  /**
+   * @Q
+   */
   type Join<T extends unknown[], U extends string | number>
     = T extends [infer F, ...infer Rest]
       ? `${F & string}${Rest['length'] extends 0 ? '' : U}${Join<Rest, U>}`

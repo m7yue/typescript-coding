@@ -1,4 +1,8 @@
 {
+  /**
+   * @Q
+   * 减法
+   */
   type MinusOne<T extends number, Arr extends unknown[] = []>
     = [...Arr, any]['length'] extends T ? Arr['length'] : MinusOne<T, [...Arr, any]>
 

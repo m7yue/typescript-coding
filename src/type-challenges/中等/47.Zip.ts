@@ -5,6 +5,6 @@
         ? Zip<RestF, RestU, [...Res, [TF, TU]]>
         : Res
       : Res
-
+  // @Q 注意审题
   type exp = Zip<[1, 2], [true, false]> // expected to be [[1, true], [2, false]]
 }

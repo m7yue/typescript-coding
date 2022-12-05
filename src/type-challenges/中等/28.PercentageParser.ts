@@ -1,4 +1,7 @@
 {
+  /**
+   * @Q
+   */
   type PercentageParser<S extends string>
     = S extends `${infer F}${infer M}`
       ? [

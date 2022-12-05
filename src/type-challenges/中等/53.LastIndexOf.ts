@@ -1,4 +1,8 @@
 {
+  /**
+   * @Q
+   * [...infer Rest, infer R]
+   */
   type LastIndexOf<T extends unknown[], U>
     = T extends [...infer Rest, infer R]
       ? R extends U
