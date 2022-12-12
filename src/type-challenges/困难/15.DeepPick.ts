@@ -10,7 +10,7 @@
         }
         : never
 
-  type UnionPick<T, K extends string>
+  type UnionPick<T extends Record<string, any>, K extends string>
     =  K extends K
       ? GetData<T, K>
       : never
@@ -19,7 +19,7 @@
     = (T extends any ? (x: T) => any : never) extends (x: infer U) => any ? U : never
 
     
-  type DeepPick<T, K extends string> = UnionToIntersection<UnionPick<T, K>>
+  type DeepPick<T extends Record<string, unknown>, K extends string> = UnionToIntersection<UnionPick<T, K>>
   
 
   type obj = {

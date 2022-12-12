@@ -1,4 +1,6 @@
 {
+  // @Q
+  
   /**
    * UnionToIntersection<{ foo: string } | { bar: string }> =
    *  { foo: string } & { bar: string }.

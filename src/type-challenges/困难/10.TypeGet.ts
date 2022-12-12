@@ -17,7 +17,8 @@
     },
     hello: 'world'
   }
-    
+  
+
   type A = TypeGet<Data, 'hello'> // 'world'
   type B = TypeGet<Data, 'foo.bar.count'> // 6
   type C = TypeGet<Data, 'foo.bar'> // { value: 'foobar', count: 6 }

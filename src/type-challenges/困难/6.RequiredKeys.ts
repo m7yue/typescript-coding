@@ -8,5 +8,7 @@
 
   type Result = RequiredKeys<{ foo: number; bar?: string; baz: boolean }>;// expected to be “foo”
 
+  // @Q
   type D = { foo: number; bar?: string } extends { bar?: string } ? true : false
+  type D2 = { bar?: string } extends { bar: string } ? true : false
 }

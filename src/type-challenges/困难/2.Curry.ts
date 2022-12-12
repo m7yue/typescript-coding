@@ -4,7 +4,7 @@ type Curry<
   F extends (...args: any[]) => any,
   P extends any[] = Parameters<F>,
   R = ReturnType<F>,
-> = P['length'] extends 1
+> = P['length'] extends 0|1
     ? (arg: P[0]) => R
     : P extends [infer A, ...infer B]
       ? (arg: A) => Curry<(...args: B) => R>

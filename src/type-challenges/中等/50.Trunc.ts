@@ -1,6 +1,6 @@
 {
   type Trunc<T extends string | number>
-    = `${T}` extends `${infer L}.${infer R}`
+    = (`${T}`) extends `${infer L}.${infer R}`
       ? L
       : `${T}`
 

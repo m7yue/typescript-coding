@@ -1,6 +1,7 @@
 {
 
   type UnionToIntersection<T>
+    // @Q 括号是必须的
     = (T extends any ? (x: T) => any : never) extends (x: infer R) => any
       ? R
       : never

@@ -10,9 +10,7 @@
       : K
     : never
 
-  type GetOptional<T> = {
-    [P in OptionalKeys<T>]: T[P]
-  }
+  type GetOptional<T> = Pick<T, OptionalKeys<T>>
 
   type GetOptional1<T> = {
     [P in keyof T as T[P] extends Required<T>[P] ? never : P]: T[P]

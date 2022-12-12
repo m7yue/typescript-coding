@@ -16,6 +16,9 @@
           : UppercaseFirst<H>
         : ''
 
+    
+        type K = unknown[] extends object ? true : false // true
+
     type Camelize<T>
       = T extends unknown[]
         ? T extends [infer F, ...infer Rest]
@@ -26,7 +29,6 @@
             [P in keyof T as CamelCase<P & string>]: Camelize<T[P]>
           }
           : T
-
 
     type T = Camelize<{
       some_prop: string

@@ -1,6 +1,7 @@
 {
   type ObjectFromEntries<T extends [string, any]>
     = {
+      // @Q
       [P in T as P[0]]: P[1]
     }
 

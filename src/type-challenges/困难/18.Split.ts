@@ -1,5 +1,6 @@
 {
-  type Split<T extends string, K extends string, Res extends unknown[] = []>
+  // @Q
+  type Split<T extends string, K extends string>
     = T extends `${infer L}${K}${infer R}`
       ? [L, ...Split<R, K>]
       : [T]
