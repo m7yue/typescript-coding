@@ -12,8 +12,8 @@
 //   f('a', 'b') // Ok
 
 
-function isString(a: any): a is string {
-    return typeof a === 'string'
+function isString(n: any): n is string {
+    return typeof n === 'string'
 }
 
 type T = string | number
@@ -26,7 +26,8 @@ function f1<T extends string | number>(a: T, b: T) {
         return `${a} : ${b}`
     }
     else {
-        return a + b
+        return ++a
+        // return a + b
     }
 }
 f1(1, 2)

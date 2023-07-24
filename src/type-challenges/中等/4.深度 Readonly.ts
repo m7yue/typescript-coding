@@ -1,3 +1,5 @@
+// 用 Record<string, unknown>, 而不是 Record<string, any>
+
 {
   type DeepReadonly<T>
     = T extends Record<string, unknown>
@@ -48,5 +50,4 @@
   const b6: Record<string, unknown> = new Set(); // error
   const b7: Record<string, unknown> = class Person {}; // error
   const b8: Record<string, unknown> = new Promise(() => {}); // error
-
 }

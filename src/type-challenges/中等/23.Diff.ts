@@ -2,9 +2,11 @@
   /**
    * @Q
    */
-  type Diff<O, O1> = {
-    [k in Exclude<keyof O | keyof O1, keyof O & keyof O1>]: k extends keyof O ? O[k] : k extends keyof O1 ? O1[k] : never
+  type Diff<O1, O2, K extends Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2> = Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2>> = {
+    [P in K]: P extends keyof O1 ? O1[P] : P extends keyof O2 ? O2[P] : never
   }
+
+  type P = ('a' | 'b') & ('b' | 'c') // b
 
   type DiffA = {
     a: string

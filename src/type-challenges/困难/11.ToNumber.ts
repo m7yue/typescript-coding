@@ -8,5 +8,5 @@
   // @Q
   type ToNumber<S extends string> = S extends `${infer N extends number}` ? N : never
 
-  type T = ToNumber<'999999999999999'> // 无法超过 999
+  type T = ToNumber<'999999999999999'>
 }
