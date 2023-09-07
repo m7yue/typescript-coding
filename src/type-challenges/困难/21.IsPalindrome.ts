@@ -1,4 +1,8 @@
 {
+  /**
+   * 判断回文
+   */
+
   type StrLength<T extends string | number, L extends any[] = []>
   = (`${T}`) extends `${infer _}${infer R}` ? StrLength<R, [...L, 0]> : L['length']
   

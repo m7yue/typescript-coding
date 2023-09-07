@@ -68,7 +68,7 @@ namespace t1367 {
   //   [xx as never]: any
   // }
   type DeleteAllKey<T> = {
-    [K in keyof T as 'never']: T[K]
+    [K in keyof T as never]: T[K]
   }
 
   type P = keyof Foo

@@ -4,11 +4,13 @@
     [P in keyof T]: T[P]
   }
   
-  type Merge<T, F> = Flatten<{
-    [P in Exclude<keyof T, keyof F>]: T[P]
-  } & {
-    [P in keyof F]: F[P]
-  }>
+  // type Merge<T, F> = Flatten<{
+  //   [P in Exclude<keyof T, keyof F>]: T[P]
+  // } & {
+  //   [P in keyof F]: F[P]
+  // }>
+
+  type Merge<T, F> = Flatten<Omit<T, keyof F> & F>
   
   type Assign<T extends Record<string, unknown>, U>
     = U extends [infer F, ...infer O]

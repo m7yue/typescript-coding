@@ -17,7 +17,8 @@
 
 type UnionToIntersection1<T> = (T extends any
       ? (x: T) => any
-      : never) extends (x: infer R) => any
+      : never
+      ) extends (x: infer R) => any
         ? R
         : never;
   

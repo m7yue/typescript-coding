@@ -2,7 +2,11 @@
   /**
    * @Q
    */
-  type Diff<O1, O2, K extends Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2> = Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2>> = {
+  type Diff<
+    O1,
+    O2,
+    K extends Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2> = Exclude<keyof O1 | keyof O2, keyof O1 & keyof O2>
+    > = {
     [P in K]: P extends keyof O1 ? O1[P] : P extends keyof O2 ? O2[P] : never
   }
 

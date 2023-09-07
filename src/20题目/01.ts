@@ -10,7 +10,7 @@ type User = {
 //     // but 'T' could be instantiated with a different subtype of constraint 'User'.
 //     return {
 //         id: u.id,
-//         // kind: 'customer'
+//         kind: 'customer',
 //     }
 // }
 
@@ -31,6 +31,19 @@ type SubUser = {
 
 type O = SubUser extends User ? 1 : 2 // 1
 
+let user: User = {
+    id: 1,
+    kind: 'customer'
+}
+
+let subUser: SubUser = {
+    id: 1,
+    kind: 'customer',
+    other: 'ccc'
+}
+
+// user = subUser // ok
+// subUser = user // error
 
 function makeCustomer<T extends User>(u: T): T {
     return {

@@ -21,14 +21,14 @@ type Foo = {
 type Simplify<T> = {
     [P in keyof T]: T[P]
 }
-type SetOptional<T, K extends keyof T> = <Partial<Pick<T, K>> & Pick<T, Exclude<keyof T, K>>>
+type SetOptional<T, K extends keyof T> = Partial<Pick<T, K>> & Pick<T, Exclude<keyof T, K>>
 
 type SetOptional1<T, K extends keyof T> = {
   [P in K]?: T[P]
 }
 
 type SomeOptional = SetOptional<Foo, 'a' | 'b'>;
-type SomeOptional1 = SetOptional<Foo, 'a'>;
+type SomeOptional1 = SetOptional1<Foo, 'a'>;
 /**
   type SomeOptional = {
     a?: number | undefined;

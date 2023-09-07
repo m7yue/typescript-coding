@@ -18,7 +18,7 @@ function isString(n: any): n is string {
 
 type T = string | number
 
-function f1<T extends string | number>(a: T, b: T) {
+function f1(a: T, b: T) {
     // if (typeof a === 'string') {
     //     return `${a} : ${b}`
     // }
